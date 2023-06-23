@@ -27,7 +27,7 @@ function Home(props) {
             return(
               
               <div key={i} className={darkmode ? 'country darkmode' : "country"}>
-                <a href={`/detail/${i}`}>
+                <a href={`detail${i}`}>
                 <div><img src={item.flags.png} className="countryFlg"/></div>
                 <p>국가명 : {item.name.common}, {item.translations.kor.common}</p>
                 <p>인구 : {(item.population).toLocaleString()} 명</p>
