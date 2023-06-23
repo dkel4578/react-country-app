@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import Header from "../components/Header";
 import { useState, useEffect } from 'react'
 import {Context} from '../components/Context'
-
+import { Link } from 'react-router-dom'
 function Home(props) {
 
   const {data, country, handleCountryChange, handleCountrySearch} = props
@@ -27,13 +27,13 @@ function Home(props) {
             return(
               
               <div key={i} className={darkmode ? 'country darkmode' : "country"}>
-                <a href={`detail${i}`}>
+                <Link to={`detail${i}`}>
                 <div><img src={item.flags.png} className="countryFlg"/></div>
                 <p>국가명 : {item.name.common}, {item.translations.kor.common}</p>
                 <p>인구 : {(item.population).toLocaleString()} 명</p>
                 <p>지역 : {item.region}</p>
                 <p>수도명 : {item.capital ? item.capital : '없음'} </p>
-                </a>
+                </Link>
               </div>
               
             )
